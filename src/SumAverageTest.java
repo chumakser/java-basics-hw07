@@ -2,6 +2,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.stream.IntStream;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
