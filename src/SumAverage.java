@@ -35,9 +35,14 @@ public class SumAverage {
    * @return average of integers
    */
   public static double average(int lowerBound, int upperBound) {
-    int[] numbers = IntStream.range(lowerBound, upperBound + 1).toArray();
-    double sumToDouble  = sumOfAll(numbers);
-    return sumToDouble/numbers.length;
+    double sum = 0;
+    int i = lowerBound;
+
+    while (i <= upperBound) {
+      sum = sum + i;
+      i++;
+    }
+    return sum / (upperBound - lowerBound + 1);
   }
 
   /**
@@ -47,8 +52,16 @@ public class SumAverage {
    * @return average of integers
    */
   public static double average(int[] numbers) {
-    double sumToDouble  = sumOfAll(numbers);
-    return sumToDouble/numbers.length;
+    int i = 0;
+    double sum = 0;
+    do {
+      sum = sum + numbers[i];
+      i++;
+    }
+    while (i<numbers.length);
+      return sum/numbers.length;
+    //double sumToDouble  = sumOfAll(numbers);
+    //return sumToDouble/numbers.length;
   }
 
   private static int sumOfAll(int[] numbers)
